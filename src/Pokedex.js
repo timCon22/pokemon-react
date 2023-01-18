@@ -4,11 +4,12 @@ import Pokecard from "./Pokecard"
 
 
 function Pokedex(props){
+    let mon = props.pokemon
     return(
         <div>
             <h1>Pokedex</h1>
             <div>
-                {props.map(p =>(
+                {mon.map(p =>(
                     <Pokecard 
                     id={p.id}
                     name={p.name}
@@ -22,6 +23,7 @@ function Pokedex(props){
     )
 }
 
+
 Pokedex.defaultProps = {
     pokemon: [
         {id: 4, name: 'Charmander', type: 'fire', base_experience: 62},
@@ -34,5 +36,7 @@ Pokedex.defaultProps = {
         {id: 133, name: 'Eevee', type: 'normal', base_experience: 65}
     ]
 } 
+
+console.log(Pokedex.defaultProps.pokemon[0].base_experience)
 
 export default Pokedex
